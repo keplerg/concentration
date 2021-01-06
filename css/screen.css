@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+
+
+body {
+    font-family: "Open Sans", Arial, Tahoma, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+form {
+    width: 100%;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.25em;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+a {
+    color: SteelBlue;
+}
+
+a:hover {
+    color: #36658c;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    padding: 0.6em 0.6em;
+    font-size: 1em;
+    width: 100%;
+    border: 1px #333 solid;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+    border: 1px SteelBlue solid;
+    outline: 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"], button, textarea, select {
+    border-radius: 6px;
+}
+
+textarea {
+    padding: 0.6em 0.6em;
+    font-size: 1.231em;
+    width: 100%;
+    height: 100%; 
+    box-sizing: border-box;
+    border: 1px #333 solid; 
+    line-height: 1.6em;       
+}
+
+label {
+    margin: 1.4em 0 0.4em 0;
+    clear: both;
+    display: block;
+}
+
+button {
+    background-color: SteelBlue;
+    border: 1px SteelBlue solid;
+    margin: 1em 0.1em 0 0;
+    padding: 0.6em 1.2em;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+button:hover {
+    background-color: #36658c;
+    border: 1px #36658c solid;
+}
+
+.alt {
+    background-color: transparent;
+    border: 1px SteelBlue solid;
+    color: #333;        
+}
+
+.alt:hover {
+    background-color: transparent;
+    border: 1px #36658c solid;
+    color: SteelBlue;
+}
+
+ul {
+    margin: 2em 0;
+    list-style-type: circle;
+}
+
+li {
+    line-height: 1.8em;
+}
+
+input[type="checkbox"] {
+  top: 0.3em;
+  position: relative;
+  width: 1.4em; height: 1.4em;
+}
+
+input[type="radio"] {
+    margin: 1.6em 0 2em 1em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #555;
+    margin: 2em 0;
+}
+
+@media screen and (max-width: 550px) {
+  button {
+    width: 100%;
+  }
+}
+
+/* Application specific CSS */
+
+div.banner {
+    display: inline-block;
+    margin: 0 20px;
+    text-align: center;
+    font-size: .95em;
+    font-weight: 700;
+}
+
+#board {
+    width: 1200px;
+    height: 650px;
+    margin: 10px auto;
+}
+
+#board table.twenty-four {
+    margin: 10px auto;
+}
+
+#board table.twenty-four td.card div {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#board table.twenty-four td.card div.front {
+    position: absolute;
+    z-index: 0;
+    text-align: center;
+}
+
+#board table.twenty-four td.card div.back {
+    position: relative;
+    z-index: 1;
+    background-image: url("../images/black-back.png");
+    background-image: url("../images/blue-back.png");
+    background-size: contain;
+}
+
+#board table.fifty-two {
+    margin: 10px auto;
+}
+
+#board table.fifty-two td.card div {
+    width: 90px;
+    height: 120px;
+    border-radius: 5px;
+}
+
+#board table.fifty-two td.card div.front {
+    position: absolute;
+    z-index: 0;
+    text-align: center;
+}
+
+#overlay {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+#overlay img {
+    position: relative;
+    display: none;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    margin: auto auto;
+}
+
+#board table.fifty-two td.card div.back {
+    position: relative;
+    z-index: 1;
+    background-image: url("../images/blue-back.png");
+    background-image: url("../images/black-back.png");
+    background-size: contain;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Concentration</title>
+    <link rel="stylesheet" type="text/css" href="css/screen.css?version=1.0.4" media="screen">
+  </head>
+  <body>
+    <header><h1>Concentration</h1></header>
+    <main>
+      <div id="board">
+        <button onclick="javascript:new_board('small');">New Game</button>
+        <!-- button onclick="javascript:new_board('large');">New Large Game</button -->
+        <div class="banner">TIME: <span class="time">0</span></div>
+        <div class="banner">TRIES: <span class="tries">0</span></div>
+        <div class="banner">MATCHES: <span class="matches">0</span></div>
+        <div class="banner">MISSES: <span class="misses">0</span></div>
+        <div class="banner">SCORE: <span class="score">0</span></div>
+        <div class="banner">CARDS: <select class="sprites">
+            <option value="slot-machine">Slot Machine</option>
+            <option value="fruits">Fruits</option>
+            <!-- option value="gems">Gems</option -->
+            <option value="house-plants">House Plants</option>
+          </select>
+        </div>
+      </div>
+      <div id="overlay">
+        <img class="awesome" src="images/awesome.gif" alt="good job!" />
+        <img class="good-job" src="images/fireworks.gif" alt="good job!" />
+        <img class="ok-job" src="images/ok.gif" alt="ok job" />
+        <img class="try-again" src="images/slow-clap.gif" alt="try again..." />
+        <img class="oh-no" src="images/bad.gif" alt="oh no..." />
+      </div>
+    </main>
+    <footer></footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="javascript/jquery.flip.min.js"></script>
+      <script src="javascript/game.js?version=1.0.4"></script>
+      <script>
+          var board; // The main board class
+          var sprites = {
+            'slot-machine': new Sprite('large', '#001a35', 'images/slot-machine.jpg', 0, -15, 165, 165, 4, 3, -165, -165),
+            // 'gems': new Sprite('large', '#000', 'images/gems.jpg', 20, 0, 125, 125, 5, 5, -150, -150),
+            'house-plants': new Sprite('large', '#fff', 'images/house-plants.png', 0, 0, 145, 155, 6, 3, -200, -180),
+            'fruits': new Sprite('large', '#fff', 'images/fruits.jpg', 0, -40, 150, 150, 4, 3, -190, -180)
+          };
+
+          function new_board(size) {
+            if (board) {
+              if (board.tries == 0 || board.game_over) {
+                board.delete();
+              } else {
+                if (confirm('Start a new game?')) {
+                  board.delete();
+                } else {
+                  return false;
+                }
+              }
+            }
+            board = new Board(size);
+            board.init(sprites[$('.sprites option:checked').val()]);
+            $('.card').flip({'trigger':'manual','forceWidth':true,'forceHeight':true});
+            $('.card').flip('toggle');
+            $('.card').on('click', function(card) {
+              if (board.flip($(this))) {
+                $(this).flip(false);
+              }
+            });
+            $('.time').html(board.time);
+            $('.tries').html(board.tries);
+            $('.matches').html(board.matches.length);
+            $('.misses').html(board.misses);
+            $('.score').html(board.score);
+          }
+
+          $(document).ready(function(){
+            $('.sprites').on('change', elem => new_board('small'));
+            new_board('small');
+          });
+      </script>
+  </body>
+</html>
