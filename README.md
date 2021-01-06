@@ -1,1 +1,2 @@
-# concentration
+# Classic Concentration Game 
+Written in JavaScript
