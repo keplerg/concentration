@@ -10,6 +10,11 @@ body {
     font-size: 1rem;
 }
 
+main {
+    padding-bottom: 40px;
+    user-select: none;
+}
+
 form {
     width: 100%;
 }
@@ -153,11 +158,12 @@ div.banner {
 #board table.twenty-four td.card div {
     width: 150px;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #board table.twenty-four td.card div.front {
     position: absolute;
+    border: solid 5px #fff;
     z-index: 0;
     text-align: center;
 }

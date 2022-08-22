@@ -107,13 +107,14 @@ class Board {
         let column = parseInt(card % this.columns);
         let piece_x = parseInt(piece % this.sprite.columns) * this.sprite.x_increment + this.sprite.left;
         let piece_y = parseInt(piece / this.sprite.columns) * this.sprite.y_increment + this.sprite.top;
-        $('.card[data-row="'+row+'"][data-column="'+column+'"] .front').css('background-image', 'url('+this.sprite.img+')').
-          css('background-color', this.sprite.bg_color).
-          css('background-repeat', 'no-repeat').
-          css('background-position-x', piece_x).
-          css('background-position-y', piece_y).
-          css('height', this.sprite.height).
-          css('width', this.sprite.width);
+        $('.card[data-row="'+row+'"][data-column="'+column+'"] .front').css('background-image', 'url('+this.sprite.img+')')
+          .css('background-color', this.sprite.bg_color)
+          .css('background-repeat', 'no-repeat')
+          .css('background-position-x', piece_x)
+          .css('background-position-y', piece_y)
+          .css('height', this.sprite.height)
+          .css('width', this.sprite.width)
+        ;
 
         // now randomly add the matching card
         card = getRandomInt(board_count);
@@ -129,13 +130,14 @@ class Board {
         column = parseInt(card % this.columns);
         piece_x = parseInt(piece % this.sprite.columns) * this.sprite.x_increment + this.sprite.left;
         piece_y = parseInt(piece / this.sprite.columns) * this.sprite.y_increment + this.sprite.top;
-        $('.card[data-row="'+row+'"][data-column="'+column+'"] .front').css('background-image', 'url('+this.sprite.img+')').
-          css('background-color', this.sprite.bg_color).
-          css('background-repeat', 'no-repeat').
-          css('background-position-x', piece_x).
-          css('background-position-y', piece_y).
-          css('height', this.sprite.height).
-          css('width', this.sprite.width);
+        $('.card[data-row="'+row+'"][data-column="'+column+'"] .front').css('background-image', 'url('+this.sprite.img+')')
+          .css('background-color', this.sprite.bg_color)
+          .css('background-repeat', 'no-repeat')
+          .css('background-position-x', piece_x)
+          .css('background-position-y', piece_y)
+          .css('height', this.sprite.height)
+          .css('width', this.sprite.width);
+        ;
     }
   }
 
