@@ -149,7 +149,7 @@ class Board {
         return false;
       }
       this.flips.push(elem);
-      if (this.tries == 0) {
+      if (this.tries == 0 && this.flips.length == 1) {
         this.timeout = setTimeout('board.timer()', 1000);
       }
       if (this.flips.length == 2) {
